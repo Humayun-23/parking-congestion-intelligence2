@@ -1,0 +1,13 @@
+{
+  "weeks_used": 22,
+  "test_weeks": 4,
+  "best_model": "Ridge",
+  "best_MAE": 101.23,
+  "naive_MAE": 112.21,
+  "best_skill_vs_naive_pct": 9.8,
+  "best_sMAPE_pct": 71.3,
+  "mean_weekly_zone_load": 181.6,
+  "next_week_top10_overlap": 6,
+  "next_week_rank_spearman": 0.71,
+  "top_feature": "roll4"
+}

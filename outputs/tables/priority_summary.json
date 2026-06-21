@@ -1,0 +1,1 @@
+{"n_zones":54,"n_junctions":168,"top_zone":"Upparpet","top_zone_score":100.0,"top5_impact_coverage_pct":43.0,"top10_impact_coverage_pct":60.4,"top15_impact_coverage_pct":70.5,"top_junction":"BTP051 - Safina Plaza Junction","top10_junction_coverage_pct":48.4,"priority_weights":{"violation_volume":0.3,"congestion_impact":0.35,"recurrence":0.2,"spatial_intensity":0.15}}

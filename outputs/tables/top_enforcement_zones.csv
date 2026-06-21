@@ -1,0 +1,16 @@
+rank,police_station,priority_score,volume,impact,active_days,high_sev_events,junction_events,intensity,cum_impact_share,peak_dow,top_violation,top_vehicle,recommended_action
+1,Upparpet,100.0,29202,89212.0,152,606,29030,942.0,13.5,Sunday,NO PARKING,CAR,Patrol Sunday; extend to evening (current records stop ~14:00 IST); target no parking / car
+2,Shivajinagar,75.5,21985,63292.0,151,730,17670,536.2,23.0,Sunday,WRONG PARKING,SCOOTER,Patrol Sunday; extend to evening (current records stop ~14:00 IST); target wrong parking / scooter
+3,Malleshwaram,59.9,18620,44182.5,151,231,6400,251.6,29.7,Sunday,WRONG PARKING,CAR,Patrol Sunday; extend to evening (current records stop ~14:00 IST); target wrong parking / car
+4,City Market,57.0,14481,44014.5,151,504,13631,344.8,36.3,Sunday,WRONG PARKING,SCOOTER,Patrol Sunday; extend to evening (current records stop ~14:00 IST); target wrong parking / scooter
+5,HAL Old Airport,55.8,16656,44460.5,150,4601,0,136.5,43.0,Tuesday,NO PARKING,SCOOTER,Patrol Tuesday; extend to evening (current records stop ~14:00 IST); target no parking / scooter
+6,Vijayanagara,47.1,11546,35314.0,151,417,11022,128.3,48.3,Thursday,WRONG PARKING,SCOOTER,Patrol Thursday; extend to evening (current records stop ~14:00 IST); target wrong parking / scooter
+7,Rajajinagar,39.7,8781,26178.5,151,661,6936,75.7,52.3,Wednesday,WRONG PARKING,CAR,Patrol Wednesday; extend to evening (current records stop ~14:00 IST); target wrong parking / car
+8,Kodigehalli,36.6,8943,18148.5,151,171,0,67.2,55.0,Saturday,WRONG PARKING,SCOOTER,Patrol Saturday; extend to evening (current records stop ~14:00 IST); target wrong parking / scooter
+9,Magadi Road,35.2,6793,19795.0,151,357,5247,76.3,58.0,Sunday,NO PARKING,SCOOTER,Patrol Sunday; extend to evening (current records stop ~14:00 IST); target no parking / scooter
+10,Halasuru Gate,31.5,5145,15932.0,148,187,5138,107.2,60.4,Tuesday,WRONG PARKING,SCOOTER,Patrol Tuesday; extend to evening (current records stop ~14:00 IST); target wrong parking / scooter
+11,Jeevanbheemanagar,31.3,5730,14326.5,150,944,616,57.9,62.6,Sunday,NO PARKING,CAR,Patrol Sunday; extend to evening (current records stop ~14:00 IST); target no parking / car
+12,K.R. Pura,31.0,5307,13910.0,151,1370,0,57.7,64.7,Sunday,WRONG PARKING,CAR,Patrol Sunday; peak-window sweep; target wrong parking / car
+13,Chikkajala,29.9,4712,12340.5,149,1193,0,102.4,66.5,Friday,NO PARKING,CAR,Patrol Friday; peak-window sweep; target no parking / car
+14,Mahadevapura,29.7,5122,14692.0,147,1907,0,40.0,68.8,Sunday,PARKING IN A MAIN ROAD,CAR,Patrol Sunday; peak-window sweep; target parking in a main road / car
+15,High ground,27.4,4059,11587.5,145,64,3293,82.8,70.5,Wednesday,WRONG PARKING,SCOOTER,Patrol Wednesday; peak-window sweep; target wrong parking / scooter

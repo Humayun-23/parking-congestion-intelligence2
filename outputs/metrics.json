@@ -1,0 +1,74 @@
+{
+  "dataset": {
+    "raw_rows": 298452,
+    "rows_clean": 298447,
+    "confirmed_events": 243276,
+    "confirmed_pct": 81.5,
+    "rejected_excluded": 49754,
+    "dup_excluded": 5372,
+    "date_min": "2023-11-10",
+    "date_max": "2026-06-20",
+    "n_zones": 54,
+    "n_junctions": 168,
+    "pct_at_junction": 50.6,
+    "top_violation": "WRONG PARKING",
+    "top_vehicle": "SCOOTER"
+  },
+  "hotspots": {
+    "n_confirmed": 243276,
+    "dbscan_clusters": 456,
+    "dbscan_noise_pct": 7.6,
+    "grid_cells": 3291,
+    "grid_top1pct_concentration": 33.9,
+    "evening_gap_pct": 1.4,
+    "peak_record_hours": [
+      10,
+      11,
+      9,
+      8
+    ],
+    "weekend_share": 31.7
+  },
+  "congestion": {
+    "total_impact_units": 662900.0,
+    "hi_sev_rate_junction": 4.2,
+    "hi_sev_rate_nonjunction": 13.5,
+    "hi_sev_relative_risk": 0.31,
+    "mainroad_rate_junction": 3.7,
+    "mainroad_rate_nonjunction": 12.4,
+    "spearman_volume_junctionshare": 0.33,
+    "gini_impact_zones": 0.57,
+    "gini_impact_grid": 0.86,
+    "sensitivity_min_spearman": 0.976
+  },
+  "priority": {
+    "n_zones": 54,
+    "n_junctions": 168,
+    "top_zone": "Upparpet",
+    "top_zone_score": 100.0,
+    "top5_impact_coverage_pct": 43.0,
+    "top10_impact_coverage_pct": 60.4,
+    "top15_impact_coverage_pct": 70.5,
+    "top_junction": "BTP051 - Safina Plaza Junction",
+    "top10_junction_coverage_pct": 48.4,
+    "priority_weights": {
+      "violation_volume": 0.3,
+      "congestion_impact": 0.35,
+      "recurrence": 0.2,
+      "spatial_intensity": 0.15
+    }
+  },
+  "forecast": {
+    "weeks_used": 22,
+    "test_weeks": 4,
+    "best_model": "Ridge",
+    "best_MAE": 101.23,
+    "naive_MAE": 112.21,
+    "best_skill_vs_naive_pct": 9.8,
+    "best_sMAPE_pct": 71.3,
+    "mean_weekly_zone_load": 181.6,
+    "next_week_top10_overlap": 6,
+    "next_week_rank_spearman": 0.71,
+    "top_feature": "roll4"
+  }
+}
