@@ -28,7 +28,7 @@ local Streamlit app: an interactive heatmap + a live "Top Enforcement Zones" pan
 That script: creates `.venv`, installs pinned deps, runs the full analysis pipeline
 (`src/01…06`), then launches the demo at **http://localhost:8501**.
 
-🚀 **Live Demo:** [https://parking-congestion-intelligence-gzqbam3yu4pfjp49fh5gsp.streamlit.app/](https://parking-congestion-intelligence-gzqbam3yu4pfjp49fh5gsp.streamlit.app/)
+🚀 **Live Demo:** [https://parking-congestion-intelligence2-4x22gzq8vbmvgku4dnozrt.streamlit.app/](https://parking-congestion-intelligence2-4x22gzq8vbmvgku4dnozrt.streamlit.app/)
 
 **Manual / step-by-step equivalent** (copy-pasteable):
 
