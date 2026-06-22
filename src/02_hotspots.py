@@ -55,9 +55,9 @@ def main():
         lat=("latitude", "mean"),
         lon=("longitude", "mean"),
         active_days=("date", "nunique"),
-        zone=("police_station", lambda s: s.mode().iat[0]),
-        junction=("junction_clean", lambda s: s.mode().iat[0]),
-        top_violation=("primary_violation", lambda s: s.mode().iat[0]),
+        zone=("police_station", lambda s: s.value_counts().index[0] if len(s) else "-"),
+        junction=("junction_clean", lambda s: s.value_counts().index[0] if len(s) else "-"),
+        top_violation=("primary_violation", lambda s: s.value_counts().index[0] if len(s) else "-"),
     ).reset_index()
     cl["events_per_day"] = (cl["n_events"] / cl["active_days"]).round(2)
     cl = cl.sort_values("weighted", ascending=False).reset_index(drop=True)
@@ -72,7 +72,7 @@ def main():
         weighted=("congestion_weight", "sum"),
         high_sev=("is_high_severity", "sum"),
         active_days=("date", "nunique"),
-        zone=("police_station", lambda s: s.mode().iat[0]),
+        zone=("police_station", lambda s: s.value_counts().index[0] if len(s) else "-"),
     ).reset_index().sort_values("weighted", ascending=False)
     grid["cum_share"] = (grid["n_events"].cumsum() / grid["n_events"].sum()).round(4)
     grid.to_csv(C.TBL_DIR / "grid_hotspots.csv", index=False)
@@ -93,9 +93,9 @@ def main():
             junction_events=("has_junction", "sum"),
             active_days=("date", "nunique"),
             active_cells=("grid_cell", "nunique"),
-            top_violation=("primary_violation", lambda s: s.mode().iat[0]),
-            top_vehicle=("vehicle_type", lambda s: s.mode().iat[0]),
-            peak_dow=("dow_name", lambda s: s.mode().iat[0]),
+            top_violation=("primary_violation", lambda s: s.value_counts().index[0] if len(s) else "-"),
+            top_vehicle=("vehicle_type", lambda s: s.value_counts().index[0] if len(s) else "-"),
+            peak_dow=("dow_name", lambda s: s.value_counts().index[0] if len(s) else "-"),
         )
         r["high_sev_share"] = (r["high_sev_events"] / r["n_events"]).round(3)
         r["events_per_active_day"] = (r["n_events"] / r["active_days"]).round(1)
