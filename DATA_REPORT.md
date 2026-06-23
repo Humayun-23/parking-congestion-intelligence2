@@ -67,7 +67,7 @@ Central Street 5,388 · … (note BTP020 = **Hosahalli Metro Station** — metro
 1. **No traffic-flow data.** There is **no speed, volume, delay, or occupancy** field. Congestion
    impact **cannot be measured directly** from the raw CSV — it must be **modeled with a clearly-labeled proxy**
    (see §4, Objective 2). 
-   * **UPDATE:** We have implemented an active TomTom Traffic API validation layer (`08_live_traffic.py`) to fetch real-world "Current Speed" vs "Free Flow Speed" at top hotspots, validating the proxy model.
+   * **UPDATE:** We have implemented an active MapmyIndia Routing API validation layer (`08_live_traffic.py`) to fetch real-world "Current Speed" vs "Free Flow Speed" at top hotspots, validating the proxy model.
 2. **Hour-of-day is an enforcement-recording artifact, not the true diurnal parking curve.**
    In IST, ~**98.6% of records are logged between 03:00 and 14:30** (peak 08:00–12:00), and the
    **entire evening 15:00–23:00 IST holds ~1.4%** of records. Real commercial-area parking
@@ -76,13 +76,13 @@ Central Street 5,388 · … (note BTP020 = **Hosahalli Metro Station** — metro
    enforcement window) and treat the evening void as a **visibility gap** — *we cannot tell "no
    violation" from "no enforcement"* in those hours. **This gap is itself a headline finding**, not
    a number to forecast diurnal demand from.
-   * **UPDATE:** We engineered a YOLOv8 Computer Vision Pipeline (`07_cv_pipeline.py`) capable of running on intersection CCTV feeds to autonomously detect parking violations regardless of patrol shifts, permanently closing the visibility gap.
+   * **FUTURE ROADMAP:** To permanently close this visibility gap, we have architected a prototype YOLOv8 Computer Vision Pipeline (`07_cv_pipeline.py`) capable of running on intersection CCTV feeds to autonomously detect parking violations regardless of patrol shifts.
 3. **Timestamps are anonymized.** Every `created_datetime` ends in a constant `:46` seconds → the
    sub-minute field is synthetic jitter. Date, month, day-of-week, and hour are usable; exact
    clock-second is not.
 4. **`closed_datetime`, `action_taken_timestamp`, `description` are 100% null.** No
    resolution/dwell-time → we **cannot** measure how long a vehicle stayed illegally parked.
-   * **UPDATE:** The new CV Pipeline actively tracks bounding boxes across frames to calculate true `dwell_time_minutes` for stationary vehicles.
+   * **FUTURE ROADMAP:** Our proposed CV Pipeline prototype tracks bounding boxes across frames to calculate true `dwell_time_minutes` for stationary vehicles, solving the dwell-time data gap.
 5. **Validation noise.** 16.7% of records are `rejected` (officer-reviewed false positives) and
    42.0% are unvalidated (`null`). We carry an `is_rejected` flag and **exclude rejected +
    duplicate** from the "confirmed" analysis set (sensitivity-checked).
@@ -98,7 +98,7 @@ Central Street 5,388 · … (note BTP020 = **Hosahalli Metro Station** — metro
 | Objective | Status | How it's supported by THIS data |
 |---|---|---|
 | **1. Hotspot detection** | ✅ **Directly supported (strong)** | 100% lat/long + zone + junction + recurrence. DBSCAN (haversine) micro-clusters, ~grid aggregation, plus zone/junction rollups; day-of-week & month temporal patterns. |
-| **2. Congestion impact** | ✅ **Proxy validated via Live API** | Build a transparent **Congestion-Impact proxy** = severity-weighted volume × intersection (junction) exposure × main-road share × spatial-temporal density × recurrence. **NEW:** Modeled weights are now validated by live TomTom API metrics (`delay_seconds`, `congestion_ratio`). |
+| **2. Congestion impact** | ✅ **Proxy validated via Live API** | Build a transparent **Congestion-Impact proxy** = severity-weighted volume × intersection (junction) exposure × main-road share × spatial-temporal density × recurrence. **NEW:** Modeled weights are now validated by live MapmyIndia API metrics (`delay_seconds`, `congestion_ratio`). |
 | **3. Enforcement prioritization** | ✅ **Directly supported** | Composite **Enforcement Priority Index** per zone & junction = frequency × congestion-impact × recurrence, min-max normalized, ranked. Output = actionable top-N table with recommended patrol day/window + addressable-load estimate. |
 | **4. Short forecast** | ✅ **Feasible (Enhanced)** | ~5 months of daily data per zone. **NEW:** Upgraded with environmental data (Indian public holidays + historical weather). Ridge regression now demonstrably beats moving-average baselines with a 9.8% skill improvement. |
 
