@@ -278,7 +278,7 @@ with tab_map:
                 f"Peak day: {r['peak_dow']}<br>"
                 f"Top offence: {r['top_violation']}", max_width=260)).add_to(mc)
     folium.LayerControl(collapsed=False).add_to(m)
-    st_folium(m, height=560, use_container_width=True, returned_objects=[])
+    st_folium(m, height=560, width="stretch", returned_objects=[])
     st.caption(f"**Map Legend:**<br>"
                f"• **Heat layer (Blue-Red):** Violation density or modeled congestion impact.<br>"
                f"• **Red markers:** Top priority enforcement zones (Size ∝ Estimated congestion impact score).", unsafe_allow_html=True)
@@ -291,7 +291,7 @@ with tab_zones:
     
     col_addr, col_space = st.columns([0.4, 0.6])
     with col_addr:
-        resolve_addresses = st.button("📍 Fetch Precise Street Addresses (MapmyIndia)", use_container_width=True)
+        resolve_addresses = st.button("📍 Fetch Precise Street Addresses (MapmyIndia)", width="stretch")
         
     if resolve_addresses:
         with st.spinner("Calling MapmyIndia Reverse Geocoding API for top zones..."):
@@ -580,7 +580,7 @@ with tab_whatif:
         showlegend=True,
         legend=dict(yanchor="bottom", y=0.02, xanchor="right", x=0.98),
     )
-    st.plotly_chart(fig_curve, use_container_width=True)
+    st.plotly_chart(fig_curve, width="stretch")
 
     # Breakdown table of deployed zones
     st.markdown(f"#### Zones in deployment plan (top {n_deploy})")
@@ -597,7 +597,7 @@ with tab_whatif:
         "peak_dow": "peak day",
         "top_violation": "top offence",
     })
-    st.dataframe(deploy_show, use_container_width=True, hide_index=True)
+    st.dataframe(deploy_show, width="stretch", hide_index=True)
 
     st.caption(
         "**Methodology:** Delivery delay estimates assume 10 impact units = 1 min of "
@@ -671,11 +671,10 @@ with tab_patrol:
         schedule_df = pd.DataFrame(schedule_rows)
 
         # --- Summary recommendation table ---
-        st.markdown("### 📍 Recommended Patrol Schedule")
         st.dataframe(
             schedule_df[["rank", "zone", "optimal_window",
                          "window_capture", "peak_days", "total_violations"]],
-            use_container_width=True, hide_index=True,
+            width="stretch", hide_index=True,
         )
         st.download_button(
             "⬇️ Download patrol schedule (CSV)",
@@ -715,7 +714,7 @@ with tab_patrol:
                 aspect="auto",
             )
             fig_heat.update_layout(height=350)
-            st.plotly_chart(fig_heat, use_container_width=True)
+            st.plotly_chart(fig_heat, width="stretch")
 
             # Highlight the optimal window
             zone_sched = [r for r in schedule_rows if r["zone"] == sel_zone]
@@ -745,7 +744,7 @@ with tab_validate:
     col_btn, col_info = st.columns([0.3, 0.7])
     with col_btn:
         run_corr = st.button(
-            "🔬 Run Correlation Analysis", type="primary", use_container_width=True
+            "🔬 Run Correlation Analysis", type="primary", width="stretch"
         )
     with col_info:
         st.caption(
@@ -843,7 +842,7 @@ with tab_validate:
             xaxis_title="Modeled Priority Score (0–100)",
             yaxis_title="Actual Speed Reduction % (from TomTom)",
         )
-        st.plotly_chart(fig, use_container_width=True)
+        st.plotly_chart(fig, width="stretch")
 
         # --- Interpretation ---
         if np.isnan(pearson_r):
@@ -891,7 +890,7 @@ with tab_validate:
             "speed_reduction_pct": "speed drop %",
             "delay_seconds": "delay (s)",
         })
-        st.dataframe(show_corr, use_container_width=True, hide_index=True)
+        st.dataframe(show_corr, width="stretch", hide_index=True)
     elif corr_df.empty:
         st.info(
             "Click **🔬 Run Correlation Analysis** above to fetch live traffic "
