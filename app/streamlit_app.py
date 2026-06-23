@@ -735,7 +735,7 @@ with tab_validate:
     st.subheader("Congestion Correlation Proof — Model vs Real-World Traffic")
     st.markdown(
         "Does our **modeled congestion-impact proxy** actually predict real-world "
-        "traffic slowdowns? We ping the **TomTom Traffic Flow API** at each zone's "
+        "traffic slowdowns? We ping the **MapMyIndia Traffic Flow API** at each zone's "
         "centroid and compare the *actual speed reduction %* against our "
         "*modeled priority score*."
     )
@@ -754,7 +754,7 @@ with tab_validate:
 
     if run_corr:
         with st.spinner(
-            "Pinging TomTom API for 15 zones across priority spectrum..."
+            "Pinging MapMyIndia API for 15 zones across priority spectrum..."
         ):
             import importlib
             live_mod = importlib.import_module("08_live_traffic")
@@ -840,7 +840,7 @@ with tab_validate:
         fig.update_layout(
             height=520,
             xaxis_title="Modeled Priority Score (0–100)",
-            yaxis_title="Actual Speed Reduction % (from TomTom)",
+            yaxis_title="Actual Speed Reduction % (from MapMyIndia API)",
         )
         st.plotly_chart(fig, width="stretch")
 
