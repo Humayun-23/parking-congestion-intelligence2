@@ -1,0 +1,30 @@
+feat(ui): overhaul dashboard for Gridlock 2.0 hackathon pitch
+
+This commit finalizes the ParkSight dashboard and documentation for 
+the Flipkart Gridlock 2.0 hackathon submission, focusing heavily on 
+UI/UX polish, MapmyIndia Routing API integration, and business ROI.
+
+Backend & Data:
+- Updated `05_forecast.py` to export test-week predictions to CSV for 
+  interactive frontend rendering.
+
+Streamlit Dashboard Overhaul:
+- Revamped the top section with a new Hero statement, localized 
+  Bengaluru positioning, and MapmyIndia API attribution.
+- Re-organized the KPI row into a responsive 2x3 grid to prevent 
+  mobile truncation, added helper text to all metrics, and safely 
+  adjusted wording to "estimated delay savings".
+- Added a dynamic "Demo Mode" insight banner that surfaces the 
+  Bottom Line Up Front (BLUF): Problem (43% impact), Action, and ROI.
+- Replaced the static matplotlib forecast image with a highly 
+  interactive 2x2 Plotly subplot comparing Actuals vs AI Forecast.
+- Added a dedicated explainer for the March 31 (Financial Year) and 
+  April 7 (Elections) data anomalies to highlight the AI's strength.
+- Injected judge-friendly `st.info` explanation panels at the top 
+  of every tab to provide instant context.
+
+Documentation:
+- Updated `README.md` architecture flow to explicitly highlight the 
+  MapmyIndia Routing API step for what-if route-level impact analysis.
+- Generated a brand new 3-minute `video_demo.md` pitch script designed 
+  to walk judges through the interactive map, simulator, and validation tabs.

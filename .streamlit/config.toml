@@ -1,0 +1,7 @@
+[theme]
+base="dark"
+primaryColor="#2874F0"  # Flipkart Blue
+backgroundColor="#0B0F19" # Deep premium dark blue/black
+secondaryBackgroundColor="#1A202C" # Slightly lighter dark for sidebars
+textColor="#E2E8F0" # Soft white/gray for readability
+font="sans serif"

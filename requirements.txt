@@ -29,3 +29,4 @@ ultralytics
 holidays
 requests
 python-dotenv
+statsmodels

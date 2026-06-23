@@ -39,7 +39,7 @@ for _d in (DATA_DIR, OUT_DIR, FIG_DIR, TBL_DIR):
     _d.mkdir(parents=True, exist_ok=True)
 
 # API Keys
-TOMTOM_API_KEY = os.getenv("TOMTOM_API_KEY", "DEMO_KEY")
+MAPMYINDIA_API_KEY = os.getenv("MAPMYINDIA_API_KEY", "ssajusqohbvsidqzyqfyqeksiolttnlywpsg")
 
 # ------------------------------------------------------------------- reproducibility
 SEED = 42

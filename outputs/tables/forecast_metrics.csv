@@ -1,5 +1,5 @@
 model,MAE,RMSE,sMAPE_%,skill_vs_naive_%
 Ridge,101.23,201.61,71.3,9.8
-HistGBM_poisson,101.66,187.26,68.0,9.4
+HistGBM_poisson,101.37,188.99,68.0,9.7
 baseline_moving_avg4,103.86,195.6,69.1,7.4
 baseline_seasonal_naive,112.21,238.65,70.9,0.0

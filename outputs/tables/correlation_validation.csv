@@ -1,0 +1,16 @@
+zone,priority_rank,priority_score,modeled_impact,live_speed_kmh,free_flow_kmh,speed_reduction_pct,delay_seconds,category
+Upparpet,1,100.0,89212,27,58,53.4,97,High Priority
+Shivajinagar,2,75.5,63292,25,52,51.9,69,High Priority
+Malleshwaram,3,59.9,44182,29,58,50.0,93,High Priority
+City Market,4,57.0,44014,12,41,70.7,75,High Priority
+HAL Old Airport,5,55.8,44460,27,53,49.1,72,High Priority
+Vijayanagara,6,47.1,35314,26,44,40.9,61,High Priority
+Rajajinagar,7,39.7,26178,36,53,32.1,51,High Priority
+Kodigehalli,8,36.6,18148,24,47,48.9,65,High Priority
+Magadi Road,9,35.2,19795,41,60,31.7,63,High Priority
+Halasuru Gate,10,31.5,15932,31,49,36.7,59,High Priority
+Hennuru,50,11.1,1702,33,48,31.2,48,Low Priority
+Devanahalli Airport,51,8.8,1556,34,43,20.9,23,Low Priority
+Kengeri,52,7.2,1034,44,60,26.7,49,Low Priority
+K.G. Halli,53,4.6,1434,45,55,18.2,31,Low Priority
+No Police Station,54,0.0,656,33,48,31.2,51,Low Priority

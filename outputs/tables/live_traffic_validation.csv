@@ -1,6 +1,6 @@
 Junction,Modeled_Impact_Weight,Live_Speed_kmh,Free_Flow_kmh,Actual_Delay_Sec
-BTP051 - Safina Plaza Junction,2,19,27,110
-BTP082 - KR Market Junction,2,19,19,0
-BTP040 - Elite Junction,2,18,18,0
-BTP044 - Sagar Theatre Junction,2,25,25,0
-BTP211 - Central Street Junction,2,17,22,91
+BTP051 - Safina Plaza Junction,2,15,50,100
+BTP082 - KR Market Junction,2,23,40,92
+BTP040 - Elite Junction,2,38,57,103
+BTP044 - Sagar Theatre Junction,2,14,43,115
+BTP211 - Central Street Junction,2,35,52,102

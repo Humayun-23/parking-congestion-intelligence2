@@ -182,6 +182,7 @@ def main():
     # actual vs predicted for top-4 zones over test weeks
     top4 = conf["police_station"].value_counts().head(4).index.tolist()
     test_pred = test.copy(); test_pred["pred"] = results[best]
+    test_pred.to_csv(C.TBL_DIR / "forecast_predictions.csv", index=False)
     fig, axes = plt.subplots(2, 2, figsize=(14, 9))
     for ax, z in zip(axes.ravel(), top4):
         d = test_pred[test_pred.police_station == z].sort_values("week_start")
